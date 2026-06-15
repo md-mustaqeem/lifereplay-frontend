@@ -1,0 +1,22 @@
+html {
+  overflow-y: scroll;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #fff;
+  background: radial-gradient(circle at top, #3a1c71, #000);
+  /* color: black;
+  background-color: #fff; */
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

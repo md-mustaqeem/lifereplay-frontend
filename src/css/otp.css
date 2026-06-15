@@ -1,0 +1,33 @@
+/* OTP VERIFY BUTTON */
+.otp-btn {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 10px;
+
+  background-color: white;
+  color: black;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.otp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(147, 51, 234, 0.4);
+}
+
+/* Disabled state */
+.otp-btn:disabled {
+  background: #6b7280;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}

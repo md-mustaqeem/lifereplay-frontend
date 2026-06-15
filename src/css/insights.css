@@ -1,0 +1,170 @@
+.insights-wrapper {
+  padding: 2px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.insights-title {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.insights-card {
+  width: 100%;
+  max-width: 100%;
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 255, 255, 0.06),
+    rgba(0, 0, 0, 0.4)
+  );
+  border-radius: 22px;
+  padding: 18px;
+}
+
+/* 🔥 SIDE BY SIDE LAYOUT */
+.insights-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* PANELS */
+.insight-block {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.left-panel {
+  min-height: 380px;
+}
+
+.right-panel {
+  overflow-x: auto;
+}
+
+/* HEADER */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.insight-heading {
+  font-size: 16px;
+}
+
+/* FILTERS */
+.insight-filters {
+  display: flex;
+  gap: 8px;
+}
+
+.insight-filters select {
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  padding: 4px 8px;
+  border: none;
+}
+
+/* HEATMAP TEXT */
+.heatmap-subtitle {
+  font-size: 12px;
+  color: #cbd5f5;
+  margin-bottom: 8px;
+}
+
+/* LEGEND */
+.heatmap-legend-clean {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 16px;
+  font-size: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.legend-box.green {
+  background: #22c55e;
+}
+.legend-box.lime {
+  background: #a3e635;
+}
+.legend-box.gray {
+  background: #64748b;
+}
+.legend-box.red {
+  background: #ef4444;
+}
+
+/* FOOTER */
+.insight-desc {
+  margin-top: 12px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 900px) {
+  .insights-row {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== MATRIX HEATMAP ===== */
+.matrix-heatmap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-x: auto;
+}
+
+.matrix-row {
+  display: grid;
+  grid-template-columns: 80px repeat(auto-fit, 32px);
+  gap: 6px;
+  align-items: center;
+}
+
+.matrix-row.header {
+  margin-bottom: 6px;
+}
+
+.matrix-label {
+  font-size: 13px;
+  color: #e5e7eb;
+  text-align: right;
+  padding-right: 6px;
+  white-space: nowrap;
+}
+
+.matrix-date {
+  font-size: 11px;
+  color: #9ca3af;
+  text-align: center;
+}
+
+.matrix-cell {
+  height: 26px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.matrix-cell:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+}

@@ -1,0 +1,138 @@
+.timeline-section {
+  padding: 40px 20px;
+  color: #fff;
+}
+
+/* ===== SCROLL ===== */
+.emotion-flow-outer {
+  overflow-x: auto;
+}
+
+.emotion-flow {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  padding: 60px 40px 20px;
+  position: relative;
+  min-width: max-content;
+}
+
+/* ===== FIXED LINE ===== */
+.emotion-line {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, #1abc9c, #f1c40f, #e74c3c);
+  z-index: 0;
+}
+
+/* ===== ITEMS ===== */
+.emotion-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== NODES ===== */
+.emotion-node {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+/* Sizes */
+.size-medium {
+  width: 80px;
+  height: 80px;
+}
+
+.size-large {
+  width: 95px;
+  height: 95px;
+}
+
+/* ===== MOOD COLORS ===== */
+.mood-happy {
+  background: radial-gradient(circle, #2ecc71, #27ae60);
+  box-shadow: 0 0 25px #2ecc71;
+}
+
+.mood-good {
+  background: radial-gradient(circle, #3498db, #1e3799);
+  box-shadow: 0 0 25px #3498db;
+}
+
+.mood-natural {
+  background: radial-gradient(circle, #95a5a6, #7f8c8d);
+  box-shadow: 0 0 25px #bdc3c7;
+}
+
+.mood-sad {
+  background: radial-gradient(circle, #cfe014, #edd311);
+  box-shadow: 0 0 35px #ff0000;
+}
+.mood-red {
+  background: radial-gradient(circle, #ff3b3b, #fa0202);
+  box-shadow: 0 0 40px red;
+}
+
+/* ===== INFO ===== */
+.node-info {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.node-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.node-text h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ===== PRESENT ↔ PAST INDICATOR ===== */
+.time-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 40px 10px;
+}
+
+.time-pill {
+  padding: 10px 26px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  background: linear-gradient(135deg, #aebc1a, #e94905);
+  min-width: 110px;
+  text-align: center;
+}
+
+.time-pill.present {
+  background: linear-gradient(135deg, #1abc9c, #06493c);
+}
+
+.time-pill.past {
+  background: linear-gradient(135deg, #2980b9, #121e26);
+}
+
+.time-line {
+  flex: 1;
+  height: 2px;
+  margin: 0 20px;
+  background: linear-gradient(to right, #1abc9c, #063f65);
+}
