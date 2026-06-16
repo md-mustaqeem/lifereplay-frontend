@@ -112,10 +112,10 @@ const UserDashboard = () => {
     return () => clearInterval(timer);
   }, [viewMode]);
 
-  // 🔍 COMPLETE SEARCH HANDLER
+  //  COMPLETE SEARCH HANDLER
   const handleSearch = async (value) => {
     setQuery(value);
-    setSelectedMood(null); // ✅ VERY IMPORTANT
+    setSelectedMood(null); //  VERY IMPORTANT
     const v = value.trim().toLowerCase();
     if (v === "") {
       const res = await api.get("/memory/my");

@@ -1,63 +1,57 @@
 import "../css/features.css";
 
+const features = [
+  {
+    title: "AI Memory Search",
+    desc: "Ask natural questions like 'When was I last happy?' and let AI find the moment.",
+    icon: "🧠",
+  },
+  {
+    title: "Timeline View",
+    desc: "Visualize your life events in a clean, chronological feed sorted by date and mood.",
+    icon: "📅",
+  },
+  {
+    title: "Mood Tracking",
+    desc: "Log your emotions and intensity levels to understand your daily well-being.",
+    icon: "😊",
+  },
+  {
+    title: "Visual Journaling",
+    desc: "Attach photos to your entries to bring your memories to life visually.",
+    icon: "📸",
+  },
+  {
+    title: "Bank-Grade Security",
+    desc: "Your data is protected with JWT and encrypted storage. Only you hold the keys.",
+    icon: "🔒",
+  },
+  {
+    title: "Deep Life Insights",
+    desc: "Identify emotional trends, stressful periods, and your happiest milestones automatically.",
+    icon: "📊",
+  },
+];
+
 const Features = () => {
   return (
     <div className="features-page">
-      {/* HERO */}
       <section className="features-hero">
-        <h1>Powerful Features</h1>
+        <h1>Your Life, Indexed by AI</h1>
         <p>
-          Life Replay AI helps you capture, relive, and understand your life
-          moments with the power of AI.
+          Transform raw memories into a structured timeline of growth and
+          reflection.
         </p>
       </section>
 
-      {/* FEATURES GRID */}
       <section className="features-grid">
-        <div className="feature-card">
-          <h3>🧠 AI Memory Search</h3>
-          <p>
-            Search your memories using natural language like
-            <em> “When was I last happy?”</em>
-          </p>
-        </div>
-
-        <div className="feature-card">
-          <h3>📅 Timeline View</h3>
-          <p>
-            View your life events in a clean timeline sorted by date and mood.
-          </p>
-        </div>
-
-        <div className="feature-card">
-          <h3>😊 Mood Tracking</h3>
-          <p>
-            Track emotions such as Happy, Sad, Neutral, Angry with intensity
-            levels.
-          </p>
-        </div>
-
-        <div className="feature-card">
-          <h3>📸 Photo Memories</h3>
-          <p>
-            Upload images with your memories to visually relive your moments.
-          </p>
-        </div>
-
-        <div className="feature-card">
-          <h3>🔒 Secure & Private</h3>
-          <p>
-            Your memories are protected using secure authentication and JWT.
-          </p>
-        </div>
-
-        <div className="feature-card">
-          <h3>📊 Insights & Stats</h3>
-          <p>
-            Get insights like happiest days, stressful periods, and memory
-            trends.
-          </p>
-        </div>
+        {features.map((f, index) => (
+          <div className="feature-card" key={index}>
+            <div className="card-icon">{f.icon}</div>
+            <h3>{f.title}</h3>
+            <p>{f.desc}</p>
+          </div>
+        ))}
       </section>
     </div>
   );

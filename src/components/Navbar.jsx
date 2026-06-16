@@ -3,20 +3,21 @@ import { useEffect, useState, useRef } from "react";
 import "../css/navbar.css";
 
 const Navbar = () => {
+  const [mobileMenu, setMobileMenu] = useState(false);
   const [user, setUser] = useState(null);
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
 
-  // 🔁 RE-READ USER ON EVERY ROUTE CHANGE
+  //  RE-READ USER ON EVERY ROUTE CHANGE
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     setUser(storedUser ? JSON.parse(storedUser) : null);
     setOpen(false);
   }, [location]);
 
-  // ❌ outside click close
+  //  outside click close
   useEffect(() => {
     const handler = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -40,18 +41,35 @@ const Navbar = () => {
         <Link to="/" className="logo">
           Life Replay <span className="ai">AI</span>
         </Link>
+        <button
+          className="menu-toggle"
+          onClick={() => setMobileMenu(!mobileMenu)}
+        >
+          ☰
+        </button>
 
         {/* LINKS */}
-        <div className="nav-links">
-          <NavLink to="/features">Features</NavLink>
-          <NavLink to="/how-it-works">How it Works</NavLink>
-          <NavLink to="/testimonials">Testimonials</NavLink>
+        <div className={`nav-links ${mobileMenu ? "active" : ""}`}>
+          <NavLink to="/features" onClick={() => setMobileMenu(false)}>
+            Features
+          </NavLink>
+          <NavLink to="/how-it-works" onClick={() => setMobileMenu(false)}>
+            How it Works
+          </NavLink>
+
+          <NavLink to="/testimonials" onClick={() => setMobileMenu(false)}>
+            Testimonials
+          </NavLink>
         </div>
 
         {/* RIGHT */}
         <div className="nav-right" ref={dropdownRef}>
           {!user ? (
-            <Link to="/login" className="login-btn">
+            <Link
+              to="/login"
+              className="login-btn"
+              onClick={() => setMobileMenu(false)}
+            >
               Login
             </Link>
           ) : (

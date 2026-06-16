@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: radial-gradient(circle at top, #9566ec, #474646); */
+  padding-top: 50px;
 }
 
 /* ===== WRAPPER ===== */
