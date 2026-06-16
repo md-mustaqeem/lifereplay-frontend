@@ -15,38 +15,47 @@ import ForgotPassword from "../pages/ForgotPassword";
 import VerifyOtp from "../pages/VerifyOtp";
 import ResetPassword from "../pages/ResetPassword";
 
-const AppRoutes = () => {
-  const token = localStorage.getItem("token");
+import ProtectedRoute from "./ProtectedRoute"; // ✅ Use karo
 
+const AppRoutes = () => {
   return (
     <Routes>
-      {/* 🏠 HOME → USER DASHBOARD */}
       <Route path="/" element={<UserDashboard />} />
 
-      {/* 🌐 PUBLIC */}
       <Route path="/features" element={<Features />} />
       <Route path="/how-it-works" element={<HowItWorks />} />
       <Route path="/testimonials" element={<Testimonials />} />
 
-      {/* 🔐 AUTH */}
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/verify-otp" element={<VerifyOtp />} />
       <Route path="/reset-password" element={<ResetPassword />} />
 
-      {/* 👤 USER (PRIVATE SCREENS) */}
+      {/* ✅ ProtectedRoute use karo — token variable nahi */}
       <Route
         path="/mydashboard"
-        element={token ? <MyDashboard /> : <Navigate to="/login" />}
+        element={
+          <ProtectedRoute>
+            <MyDashboard />
+          </ProtectedRoute>
+        }
       />
       <Route
         path="/add-memory"
-        element={token ? <AddMemory /> : <Navigate to="/login" />}
+        element={
+          <ProtectedRoute>
+            <AddMemory />
+          </ProtectedRoute>
+        }
       />
       <Route
         path="/memories"
-        element={token ? <MemoryList /> : <Navigate to="/login" />}
+        element={
+          <ProtectedRoute>
+            <MemoryList />
+          </ProtectedRoute>
+        }
       />
     </Routes>
   );
